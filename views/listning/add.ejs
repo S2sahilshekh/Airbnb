@@ -1,0 +1,96 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-lg-6 offset-mid-2 offset-lg-2">
+      <h1>Add New Listning</h1>
+      <form
+        method="post"
+        action="/listning"
+        class="needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title">Enter Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="listing[title]"
+            placeholder="Enter Title"
+            aria-label="Enter Title"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid title.</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Enter Description</label>
+          <textarea
+            type="text"
+            class="form-control"
+            name="listing[description]"
+            placeholder="Enter Description"
+            aria-label="Enter Description"
+            required
+          >
+          </textarea>
+          <div class="invalid-feedback">Please enter a valid description.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input
+            type="file"
+            class="form-control"
+            name="listing[image]"
+            placeholder="Upload Image"
+            aria-label="Upload Image"
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Enter price</label>
+            <input
+              class="form-control"
+              name="listing[price]"
+              placeholder="Enter price"
+              aria-label="Enter price"
+              required
+            />
+            <div class="invalid-feedback">price should be valid.</div>
+          </div>
+          <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Enter Location</label>
+            <input
+              type="text"
+              class="form-control"
+              name="listing[location]"
+              placeholder="Enter Location"
+              aria-label="Enter Location"
+              required
+            />
+            <div class="invalid-feedback">Location should be valid.</div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="country" class="form-label">Enter Country</label>
+          <input
+            type="text"
+            class="form-control"
+            name="listing[country]"
+            placeholder="Enter Country"
+            aria-label="Enter Country"
+            required
+          />
+          <div class="invalid-feedback">Country should be valid.</div>
+        </div>
+        <button class="btn btn-primary">Add</button>
+      </form>
+    </div>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+  <!-- <script src="/js/script.js"></script> -->
+</body>

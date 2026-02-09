@@ -1,0 +1,100 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-lg-8 offset-md-2">
+      <h1>Edit Your Listning</h1>
+      <form
+        method="post"
+        action="/listning/<%=foundListing._id%>"
+        class="needs-validation"
+        novalidate
+        enctype="multipart/form-data"
+      >
+        <div class="form-floating mb-3">
+          <input
+            name="listing[title]"
+            type="text"
+            class="form-control"
+            placeholder="Title"
+            value="<%= foundListing.title %>"
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid title.</div>
+          <label for="title">Title</label>
+        </div>
+        <div class="mb-3 form-floating">
+          <textarea
+            type="text"
+            class="form-control"
+            name="listing[description]"
+            placeholder="Description"
+            required
+          >
+<%=foundListing.description %>
+          </textarea>
+          <div class="invalid-feedback">Please enter a valid description.</div>
+          <label for="description">Description</label>
+        </div>
+        <div class="input-group mb-3">
+          <div class="form-floating">
+            <input
+              type="file"
+              class="form-control"
+              name="listing[image]"
+              placeholder="Upload Image"
+            />
+            <div class="mb-3">
+              <img src="<%=originalImageUrl%>" alt="Original image" />
+            </div>
+            <div class="invalid-feedback">Please Upload Image</div>
+            <label for="image">Upload Image</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mb-3 col-md-6 form-floating">
+            <input
+              type="number"
+              class="form-control"
+              name="listing[price]"
+              value="<%= foundListing.price %>"
+              placeholder="Price"
+              required
+            />
+            <div class="invalid-feedback">Price should be valid.</div>
+            <label for="price">Price</label>
+          </div>
+          <div class="mb-3 col-md-6 form-floating">
+            <input
+              type="text"
+              class="form-control"
+              name="listing[location]"
+              value="<%= foundListing.location %>"
+              placeholder="Location"
+              required
+            />
+            <div class="invalid-feedback">Location should be valid.</div>
+            <label for="location">Location</label>
+          </div>
+        </div>
+        <div class="mb-3 form-floating">
+          <input
+            type="text"
+            class="form-control"
+            name="listing[country]"
+            value="<%= foundListing.country %>"
+            placeholder="Country"
+            required
+          />
+          <div class="invalid-feedback">Country should be valid.</div>
+          <label for="country">Country</label>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"
+  ></script>
+</body>
